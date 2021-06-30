@@ -18,6 +18,7 @@ export default {
       supercluster: undefined,
       markers: [],
       timerInterval: undefined,
+      dragging: false,
     };
   },
   async created() {
@@ -176,12 +177,22 @@ export default {
       });
     },
     addMapEventListener() {
+      this.map.addListener("dragstart", () => {
+        this.dragging = true;
+      });
+      this.map.addListener("dragend", () => {
+        this.dragging = false;
+        this.clearAllTheMarks().then(() => this.setupCluster());
+      });
       this.map.addListener("zoom_changed", async () => {
         this.clearAllTheMarks().then(() => this.setupCluster());
       });
-      this.map.addListener("bounds_changed", () => {
-        this.clearAllTheMarks().then(() => this.setupCluster());
-      });
+      // TODO: This is bad for performance use dragend instead
+      // this.map.addListener("bounds_changed", () => {
+      //   if (!this.dragging) {
+      //     this.clearAllTheMarks().then(() => this.setupCluster());
+      //   }
+      // });
     },
     // eslint-disable-next-line no-unused-vars
     addMarkerEventListener(marker, latLng, properties = null) {
