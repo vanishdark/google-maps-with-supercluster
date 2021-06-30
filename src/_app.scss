@@ -1,0 +1,157 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+img[src*="m1.png"] {
+  //content:"I'm just fake content";
+  //display: block;
+  //transform: translate(-50%, -50%);
+  //top: 0;
+  //left: 0;
+  background: rgba(0, 162, 211, 0.1);
+  //opacity: 0.2;
+  border-radius: 100%;
+}
+.custom-clustericon {
+  background: var(--cluster-color);
+  color: #fff !important;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-clustericon::before,
+.custom-clustericon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: var(--pseudo-width);
+  height: var(--pseudo-height);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: var(--cluster-color);
+  opacity: 0.2;
+  border-radius: 100%;
+}
+.custom-clustericon-m1 {
+  --width: 30px;
+  --height: 30px;
+  --pseudo-width: 40px;
+  --pseudo-height: 40px;
+  --cluster-color: #00a2d3;
+}
+.custom-clustericon-m2 {
+  --width: 40px;
+  --height: 40px;
+  --pseudo-width: 50px;
+  --pseudo-height: 50px;
+  --cluster-color: #ff9b00;
+}
+.custom-clustericon-m3 {
+  --width: 50px;
+  --height: 50px;
+  --pseudo-width: 60px;
+  --pseudo-height: 60px;
+  --cluster-color: #ff6969;
+}
+.custom-clustericon-m4 {
+  --width: 60px;
+  --height: 60px;
+  --pseudo-width: 70px;
+  --pseudo-height: 70px;
+  --cluster-color: #8974c1;
+}
+.custom-clustericon-m5 {
+  --width: 70px;
+  --height: 70px;
+  --pseudo-width: 80px;
+  --pseudo-height: 80px;
+  --cluster-color: #32cd32;
+  color: white !important;
+}
+
+.customMarker {
+  background: var(--background-url);
+  width: 50px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  position: relative;
+  //margin: -30px;
+  margin-top: -15px;
+  margin-left: -20px;
+  transform: scale(0.7);
+}
+.customMarker::before,
+.customMarker::after {
+  content: "";
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+  background: url("/assets/home.png");
+  //opacity: 0.2;
+  //border-radius: 100%;
+}
+.customMarker-m1 {
+  background: url("/assets/m1.png") no-repeat;
+}
+.customMarker-m1::before,
+.customMarker-m1::after {
+  background: url("/assets/home.png");
+}
+.customMarker-m2 {
+  background: url("/assets/m2.png") no-repeat;
+}
+.customMarker-m2::before,
+.customMarker-m2::after {
+  background: url("/assets/apartment.png");
+}
+.customMarker-m3 {
+  background: url("/assets/m3.png") no-repeat;
+}
+.customMarker-m3::before,
+.customMarker-m3::after {
+  background: url("/assets/houses.png");
+}
+.customMarker-m4 {
+  background: url("/assets/m4.png") no-repeat;
+}
+.customMarker-m4::before,
+.customMarker-m4::after {
+  background: url("/assets/shoe-shop.png");
+}
+.customMarker-m5 {
+  background: url("/assets/m5.png") no-repeat;
+}
+.customMarker-m5::before,
+.customMarker-m5::after {
+  background: url("/assets/sink.png");
+}
